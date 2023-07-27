@@ -1,0 +1,49 @@
+.TH _printf.c  "July 2023" "Linux" "Man Page-user manual"
+.SH NAME
+_printf - A simplified implementation of the _printf function.
+
+.SH SYNOPSIS
+.B mi_printf
+.RB [ \-\-help ]
+.RB [ \-\-version ]
+.I format
+
+.SH DESCRIPTION
+The \fImi_printf\fP command is a simplified implementation of the \fI_printf\fP function. It allows printing strings and different data types to the standard output. The format string is similar to that of \fIprintf\fP and can contain format specifiers for various data types.
+
+.TP
+.B format
+The format string containing format specifiers and arguments to be printed. Format specifiers consist of a percent symbol followed by a character representing the data type to be printed. The following data types are supported:
+
+.TP
+.B \%c
+Prints a character.
+
+.TP
+.B \%i
+Prints a signed integer.
+
+.TP
+.B \%f
+Prints a floating-point number.
+
+.TP
+.B \%s
+Prints a string of text.
+
+.SH EXAMPLES
+Example 1: Printing an integer and a string
+.PP
+.B mi_printf
+.RB "The number is: \%i, and the string is: \%s" 42 "Hello, world!"
+.PP
+This will print "The number is: 42, and the string is: Hello, world!" to the standard output.
+
+.SH AUTHOR
+Carlos Carrasquillo 6856@holbertonstudents.com
+
+Juan Silva
+
+.SH LICENSE
+Information about the program's license.
+

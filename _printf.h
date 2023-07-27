@@ -15,3 +15,5 @@ typedef struct format
 } format_t;
 
 int _printf(const char *format, ...);
+
+#endif

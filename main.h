@@ -1,18 +1,32 @@
-#ifdef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
+#include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
 
 /**
- * _printf - formated output functions.
- * @format: character string
- * Return: the number of character
+ * struct Set - A specifier - function pair
+ * @spec: Char - the format specifier
+ * @print: Special function implemented to print data of a given
+ * specifier to stdout
+ *
+ * Description: A specifier - function pair
  */
+typedef struct Set
+{
+	char spec;
+	int (*print)(va_list arg);
+} set;
 
-int _print(const char *format, ...);
-
-int print_char(char c);
-int print_str(char *s);
-int print_interger(int num);
+int print_d(va_list list);
+int print_percent(va_list list);
+int print_rev(va_list list);
+int print_str(va_list list);
+int print_char(va_list list);
+int _printf(const char*, ...);
 
 #endif

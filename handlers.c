@@ -72,7 +72,7 @@ int print_percent(va_list args)
 int print_anything(va_list list)
 {
 	int count = 0;
-	const char *format = va_list(list, const char *);
+	const char *format = va_arg(list, const char *);
 
 	count += write(1, "%", 1);
 

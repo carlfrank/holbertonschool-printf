@@ -9,7 +9,6 @@
  * @list: A variable list of va_list type from stdarg.h
  * Return: 1
  */
-
 int print_char(va_list list)
 {
 	char c;
@@ -28,7 +27,6 @@ int print_char(va_list list)
  * @list: A variable list of type va_list of stdarg.h
  * Return: Int - Number of characters printed
  */
-
 int print_str(va_list list)
 {
 	int count;
@@ -37,7 +35,7 @@ int print_str(va_list list)
 	s = va_arg(list, char*);
 
 	if (*s == '\0')
-		return (0);
+		return (6);
 
 	count = 0;
 
@@ -81,13 +79,13 @@ int print_anything(va_list list)
 	}
 	return (count);
 }
+
 /**
  * print_int - prints an integers.
  *
  * @args: passed arguments.
  * Return: passed arguments.
  */
-
 int print_int(va_list args)
 {
 	int number = va_arg(args, int);

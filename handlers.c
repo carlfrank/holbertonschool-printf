@@ -3,16 +3,6 @@
 #include <unistd.h>
 #include "main.h"
 
-const va_list list;
-	set arguments[] = {
-		{'c', print_char},
-		{'%', print_percent},
-		{'s', print_str},
-		{'i', print_int},
-		{'d', print_int},
-		{'0', NULL}
-	};
-
 /**
  * print_char - prints out a character
  *

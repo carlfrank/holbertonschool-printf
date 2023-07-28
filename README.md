@@ -20,8 +20,10 @@ int main() {
     return 0;
 }
 ```
-use to gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+
 Compile your program and run it to see the formatted output.
+use - gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+run it with ./a.out
 
 ## Function Signature
 

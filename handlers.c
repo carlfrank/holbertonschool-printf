@@ -69,7 +69,7 @@ int print_percent(va_list args)
  * Return: arguments
  */
 
-int print_anything(va_list args)
+int print_anything(va_list list)
 {
 	int count = 0;
 	const char *format = va_arg(args, const char *);

@@ -17,6 +17,7 @@ const va_list list;
  * @list: A variable list of va_list type from stdarg.h
  * Return: 1
  */
+
 int print_char(va_list list)
 {
 	char c;
@@ -31,7 +32,7 @@ int print_char(va_list list)
 
 /**
  * print_str - prints string
- *
+ *0
  * @list: A variable list of type va_list of stdarg.h
  * Return: Int - Number of characters printed
  */
@@ -69,7 +70,7 @@ int print_percent(va_list args)
 	return (write(1, "%", 1));
 }
 
- /*
+ /**
  * print_anything - print any character
  * @args: arguments
  *
@@ -89,13 +90,80 @@ int print_anything(va_list args)
 	}
 	return (count);
 }
-/* print_integer - prints an integer.
+ /**
+ * print_int_d - prints an integer.
  *
  * @args: passed arguments.
  * Return: passed arguments.
  */
 
-/*int print_integer(va_list args)
+int print_int_d(va_list args)
 {
-	
-}*/
+int count = 0;
+
+char num_str[12];
+int len = 0, i, num =va_arg(args, int);
+
+	if (num == 0)
+	{
+		write(1, '0', 1);
+		count++;
+	}
+
+	if (num < 0 )
+	{
+		write(1, "-". 1)
+		count++;
+		num = -num;
+	}
+	else
+	{
+		while (num != 0)
+		{
+		num_str[len++] = num % 10 + '0';
+		num /= 10;
+		}
+
+		for (i = len - 1; i >= 0; i++)
+		{
+		write(1, &num_str[i], i);
+		count++;
+		}
+	}
+return (count);
+}
+
+/**
+ *print_int_i -prints an integer.
+ *
+ * @args: passed arguments.
+ * Return: passed arguments.
+ */
+
+int count = 0;
+
+char num_str[12];
+int len = 0, i, num =va_arg(args, int);
+
+	if (num == 0)
+	{
+		write(1, '0', 1);
+		count++;
+	}
+	else
+	{
+		while (num != 0)
+		{
+		num_str[len++] = num % 10 + '0';
+		num /= 10;
+		}
+
+		for (i = len - 1; i >= 0; i++)
+		{
+		write(1, &num_str[i], i);
+		count++;
+		}
+	}
+return (count);
+}
+

@@ -11,14 +11,11 @@
  */
 int print_char(va_list list)
 {
-	char c;
-
-	c = va_arg(list, int);
-
-	if (c == '\0')
-		return (0);
-	write(1, &c, 1);
-	return (1);
+	int count = 0;
+	
+	_putchar(va_arg(list, int));
+	count++;
+	return (count);
 }
 
 /**

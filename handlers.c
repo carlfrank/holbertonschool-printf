@@ -61,10 +61,10 @@ int print_percent(va_list args)
 }
 
  /**
- * print_anything - prints any chaacter'
+ * print_anything - prints any character.
  *
- * @list: arguments
- * Return: arguments
+ * @list: arguments.
+ * Return: arguments.
  */
 int print_anything(va_list list)
 {

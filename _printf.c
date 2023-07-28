@@ -2,7 +2,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
-
 /**
  * _printf - printf function
  *
@@ -21,14 +20,10 @@ int _printf(const char *format, ...)
 		{'d', print_int},
 		{'0', NULL}
 	};
-
 	if (format == NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	count = 0;
-
 		for (i = 0; *(format + i); i++)
 	{
 		if (*(format + i) == '%')
@@ -36,7 +31,6 @@ int _printf(const char *format, ...)
 			if (*(format + i + 1) == '\0')
 				continue;
 			find = 0;
-
 			for (j = 0; j < 6; j++)
 			{
 				if (*(format + i + 1) == arguments[j].spec)
@@ -47,7 +41,6 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-
 			if (find != 1)
 			{
 				if (*(format + i + 1) == '%')
@@ -58,14 +51,10 @@ int _printf(const char *format, ...)
 				else
 					count += write(1, (format + i), 1);
 			}
-
 		}
 		else
-		{
 			count += write(1, (format + i), 1);
-		}
 	}
 	va_end(list);
-
 	return (count);
 }

@@ -24,9 +24,9 @@ typedef struct Set
 
 int print_d(va_list list);
 int print_percent(va_list list);
-int print_rev(va_list list);
 int print_str(va_list list);
 int print_char(va_list list);
 int _printf(const char*, ...);
+int _putchar(char c);
 
 #endif

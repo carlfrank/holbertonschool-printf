@@ -60,7 +60,7 @@ int print_percent(va_list args)
 	return (write(1, "%", 1));
 }
 
- /**
+/**
  * print_anything - prints any character
  * @list: arguments.
  *

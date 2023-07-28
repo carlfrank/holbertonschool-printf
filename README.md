@@ -20,7 +20,7 @@ int main() {
     return 0;
 }
 ```
-
+use to gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 Compile your program and run it to see the formatted output.
 
 ## Function Signature
@@ -34,6 +34,8 @@ int _printf(const char *format, ...);
 - `%c`: Prints a single character.
 - `%s`: Prints a null-terminated string.
 - `%%`: Prints a single percent sign.
+- `&d`: Prints a signed integer.
+- `&i`: Prints an unsigned integer.
 
 ## Return Value
 
@@ -53,4 +55,4 @@ This version of `_printf` has some limitations:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

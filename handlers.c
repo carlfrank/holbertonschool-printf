@@ -34,8 +34,11 @@ int print_str(va_list list)
 
 	s = va_arg(list, char*);
 
-	if (*s == '\0')
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
 		return (6);
+	}
 
 	count = 0;
 

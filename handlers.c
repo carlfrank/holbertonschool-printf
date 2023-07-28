@@ -8,6 +8,8 @@ const va_list list;
 		{'c', print_char},
 		{'%', print_percent},
 		{'s', print_str},
+		{'i', print_int_i},
+		{'d', print_int_d},
 		{'0', NULL}
 	};
 
@@ -106,13 +108,13 @@ int len = 0, i, num =va_arg(args, int);
 
 	if (num == 0)
 	{
-		write(1, '0', 1);
+		write(1, "0", 1);
 		count++;
 	}
 
 	if (num < 0 )
 	{
-		write(1, "-". 1)
+		write(1, "-", 1)
 		count++;
 		num = -num;
 	}
@@ -147,7 +149,7 @@ int len = 0, i, num =va_arg(args, int);
 
 	if (num == 0)
 	{
-		write(1, '0', 1);
+		write(1, "0", 1);
 		count++;
 	}
 	else

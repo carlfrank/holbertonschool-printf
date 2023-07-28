@@ -8,8 +8,8 @@ const va_list list;
 		{'c', print_char},
 		{'%', print_percent},
 		{'s', print_str},
-		{'i', print_int_i},
-		{'d', print_int_d},
+/*		{'i', print_int_i},
+		{'d', print_int_d},*/
 		{'0', NULL}
 	};
 
@@ -99,12 +99,12 @@ int print_anything(va_list args)
  * Return: passed arguments.
  */
 
-int print_int_d(va_list args)
+/*int print_int_d(va_list args)
 {
 int count = 0;
 
 char num_str[12];
-int len = 0, i, num =va_arg(args, int);
+int len = 0, i, num = va_arg(args, int);
 
 	if (num == 0)
 	{
@@ -114,7 +114,7 @@ int len = 0, i, num =va_arg(args, int);
 
 	if (num < 0 )
 	{
-		write(1, "-", 1)
+		write(1, "-", 1);
 		count++;
 		num = -num;
 	}
@@ -135,17 +135,18 @@ int len = 0, i, num =va_arg(args, int);
 return (count);
 }
 
-/**
+**
  *print_int_i -prints an integer.
  *
  * @args: passed arguments.
  * Return: passed arguments.
- */
-
+ *
+int print_int_i(va_list args)
+{
 int count = 0;
 
 char num_str[12];
-int len = 0, i, num =va_arg(args, int);
+int len = 0, i, num = va_arg(args, int);
 
 	if (num == 0)
 	{
@@ -168,4 +169,4 @@ int len = 0, i, num =va_arg(args, int);
 	}
 return (count);
 }
-
+*/

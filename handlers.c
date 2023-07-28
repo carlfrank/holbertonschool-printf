@@ -8,8 +8,8 @@ const va_list list;
 		{'c', print_char},
 		{'%', print_percent},
 		{'s', print_str},
-/*		{'i', print_int_i},
-		{'d', print_int_d},*/
+		{'i', print_int},
+		{'d', print_int},
 		{'0', NULL}
 	};
 
@@ -34,7 +34,7 @@ int print_char(va_list list)
 
 /**
  * print_str - prints string
- *0
+ *
  * @list: A variable list of type va_list of stdarg.h
  * Return: Int - Number of characters printed
  */
@@ -92,81 +92,42 @@ int print_anything(va_list args)
 	}
 	return (count);
 }
- /**
- * print_int_d - prints an integer.
+/**
+ * print_int - prints an integers.
  *
  * @args: passed arguments.
  * Return: passed arguments.
  */
 
-/*int print_int_d(va_list args)
+int print_int(va_list args)
 {
-int count = 0;
+	int number = va_arg(args, int);
+	unsigned int absolute_value;
+	char digit;
+	int exponent = 1;
+	int lenght = 0;
 
-char num_str[12];
-int len = 0, i, num = va_arg(args, int);
-
-	if (num == 0)
+	if (number < 0)
 	{
-		write(1, "0", 1);
-		count++;
+		digit = '-';
+		lenght = lenght + write(1, &digit, 1);
+		absolute_value = number * -1;
 	}
 
-	if (num < 0 )
-	{
-		write(1, "-", 1);
-		count++;
-		num = -num;
-	}
 	else
-	{
-		while (num != 0)
-		{
-		num_str[len++] = num % 10 + '0';
-		num /= 10;
-		}
+		absolute_value = number;
 
-		for (i = len - 1; i >= 0; i++)
-		{
-		write(1, &num_str[i], i);
-		count++;
-		}
+	while (absolute_value / exponent > 9)
+	{
+		exponent *= 10;
 	}
-return (count);
+
+	while (exponent != 0)
+	{
+		digit = absolute_value / exponent + '0';
+		lenght = lenght + write(1, &digit, 1);
+		absolute_value = absolute_value % exponent;
+		exponent = exponent / 10;
+	}
+	return (lenght);
 }
-
-**
- *print_int_i -prints an integer.
- *
- * @args: passed arguments.
- * Return: passed arguments.
- *
-int print_int_i(va_list args)
-{
-int count = 0;
-
-char num_str[12];
-int len = 0, i, num = va_arg(args, int);
-
-	if (num == 0)
-	{
-		write(1, "0", 1);
-		count++;
-	}
-	else
-	{
-		while (num != 0)
-		{
-		num_str[len++] = num % 10 + '0';
-		num /= 10;
-		}
-
-		for (i = len - 1; i >= 0; i++)
-		{
-		write(1, &num_str[i], i);
-		count++;
-		}
-	}
-return (count);
-}
-*/

@@ -22,8 +22,8 @@ typedef struct Set
 	int (*print)(va_list arg);
 } set;
 
-/*int print_int_d(va_list list);
-int print_int_i(va_list list);*/
+int print_int(va_list list);
+int print_int(va_list list);
 int print_percent(va_list list);
 int print_str(va_list list);
 int print_char(va_list list);

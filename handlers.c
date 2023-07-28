@@ -3,15 +3,12 @@
 #include <unistd.h>
 #include "main.h"
 
-
-const function handlers[] = {
-		{'c', &print_char},
-		{'s', &print_string},
-		{'%', &print_percent},
-		{'i', &print_integer_i},
-		{'d', &print_integer_d},
-		{'r', &print_anything},
-		{NULL, NULL}
+const va_list list;
+	set arguments[] = {
+		{'c', print_char},
+		{'%', print_percent},
+		{'s', print_str},
+		{'0', NULL}
 	};
 
 /**
@@ -66,7 +63,6 @@ int print_str(va_list list)
  *
  * Return: Percent sign
  */
-
 int print_percent(va_list args)
 {
 	(void)args;
@@ -91,7 +87,6 @@ int print_anything(va_list args)
 	{
 		count += write(1, format, 1);
 	}
-:
 	return (count);
 }
 /* print_integer - prints an integer.

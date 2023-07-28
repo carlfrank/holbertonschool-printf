@@ -12,14 +12,22 @@
 int _printf(const char *format, ...)
 {
 	int i, j, count, find;
+	va_list list;
+	set arguments[] = {
+		{'c', print_char},
+		{'%', print_percent},
+		{'s', print_str},
+		{'0', NULL}
+	};
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(list, format);
+
 	count = 0;
 
-	for (i = 0; *(format + i); i++)
+		for (i = 0; *(format + i); i++)
 	{
 		if (*(format + i) == '%')
 		{

@@ -12,6 +12,7 @@
 int print_char(va_list list)
 {
 	int count = 0;
+
 	_putchar(va_arg(list, int));
 	count++;
 	return (count);
@@ -60,10 +61,10 @@ int print_percent(va_list args)
 }
 
  /**
- *print_anything - print any character
- *@list: arguments
+ * print_anything - prints any chaacter'
  *
- *Return: arguments
+ * @list: arguments
+ * Return: arguments
  */
 int print_anything(va_list list)
 {
